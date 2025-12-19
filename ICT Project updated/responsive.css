@@ -1,0 +1,264 @@
+/* ========================================
+   TrailTales - COMPLETE Responsive CSS
+   Navigation + ALL pages + ALL elements
+=========================================== */
+
+@media (max-width: 768px) {
+    .navbar { 
+        padding: 1rem; 
+    }
+    
+    /* Hide checkbox */
+    .nav-toggle { 
+        display: none; 
+    }
+    
+    /* Perfect X Container */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        cursor: pointer;
+        padding: 4px;
+        z-index: 1001;
+        width: 28px;
+        height: 28px;
+        position: relative;
+    }
+    
+    .menu-toggle span {
+        width: 24px;
+        height: 3px;
+        background: var(--primary);
+        border-radius: 2px;
+        transition: 0.3s ease;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+    }
+    
+    .menu-toggle span:nth-child(1) {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    
+    .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle span:nth-child(3) {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    
+    /* Hamburger state */
+    #nav-toggle:not(:checked) ~ .menu-toggle span:nth-child(1) {
+        transform: translate(-50%, -150%) rotate(0deg);
+    }
+    
+    #nav-toggle:not(:checked) ~ .menu-toggle span:nth-child(2) {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    
+    #nav-toggle:not(:checked) ~ .menu-toggle span:nth-child(3) {
+        transform: translate(-50%, 50%) rotate(0deg);
+    }
+    
+    /* Sidebar */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        padding: 100px 20px 20px;
+        transition: right 0.3s ease;
+        z-index: 1000;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+    }
+    
+    #nav-toggle:checked ~ .nav-menu { 
+        right: 0; 
+    }
+    
+    .nav-menu li { 
+        margin: 10px 0; 
+    }
+    
+    .nav-link { 
+        display: block; 
+        padding: 12px 20px; 
+        font-size: 1.1rem; 
+    }
+    
+    /* Hero */
+    .hero-content { 
+        padding: 0 1.5rem; 
+    }
+    
+    .intro, 
+    .featured { 
+        padding: 3rem 0; 
+    }
+    
+    /* Cards & Grids */
+    .destinations-grid,
+    .destinations-grid-full { 
+        grid-template-columns: 1fr; 
+        gap: 1.5rem; 
+    }
+    
+    /* Footer */
+    .footer-content { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+        gap: 2rem;
+    }
+    
+    .page-hero h1 { 
+        font-size: 2.5rem; 
+    }
+    
+    /* Gallery */
+    .gallery-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 0.8rem; 
+    }
+    
+    /* GUIDE */
+    .guide-grid, 
+    .safety-grid { 
+        grid-template-columns: 1fr; 
+        gap: 1.5rem; 
+    }
+    
+    .dos-donts-grid { 
+        grid-template-columns: 1fr; 
+        padding: 2rem; 
+        gap: 1.5rem; 
+    }
+    
+    /* Main content */
+    .main-content,
+    .gallery-main { 
+        padding: 3rem 0; 
+    }
+    
+    /* GUIDE CARDS */
+    .guide-card, 
+    .safety-card { 
+        padding: 1.5rem; 
+    }
+    
+    /* CONTACT - FULL WIDTH FIXED */
+    .contact-main {
+        padding: 2rem 0 !important;
+        width: 100% !important;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 1rem !important;
+    }
+    
+    .contact-info,
+    .contact-form-container,
+    .contact-form {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .contact-info {
+        order: -1; /* Info first on mobile */
+    }
+    
+    .contact-item {
+        width: 100% !important;
+        padding-left: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .contact-form {
+        padding: 2rem !important;
+        margin-bottom: 1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title { 
+        font-size: 2rem; 
+    }
+    
+    .cta-button { 
+        padding: 0.9rem 2rem; 
+        font-size: 1rem; 
+    }
+    
+    .container { 
+        padding: 0 1rem; 
+    }
+    
+    .nav-menu { 
+        width: 260px; 
+    }
+    
+    .page-hero h1 { 
+        font-size: 2rem; 
+    }
+    
+    .guide-section h2 { 
+        font-size: 2rem; 
+    }
+    
+    /* CONTACT TIGHTER MOBILE */
+    .contact-form {
+        padding: 1.5rem !important;
+    }
+    
+    .contact-item {
+        padding-left: 1rem !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .destinations-grid,
+    .destinations-grid-full { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .gallery-grid { 
+        grid-template-columns: repeat(3, 1fr); 
+    }
+    
+    /* TABLET CONTACT */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .navbar { 
+        padding: 1.2rem 3rem; 
+    }
+    
+    .hero-title { 
+        font-size: 4.5rem; 
+    }
+}
+
+/* Landscape mobile fix */
+@media (max-height: 500px) and (orientation: landscape) {
+    .nav-menu { 
+        padding-top: 80px; 
+    }
+}
