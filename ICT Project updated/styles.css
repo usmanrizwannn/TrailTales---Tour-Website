@@ -1,9 +1,4 @@
-/* ========================================
-   TrailTales - Simplified Main Stylesheet
-   Clean, readable CSS for student presentations
-=========================================== */
 
-/* CSS Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -616,3 +611,4 @@ h1, h2, h3, h4 {
     border-top: 1px solid rgba(255,255,255,0.1);
     color: var(--text-light);
 }
+
